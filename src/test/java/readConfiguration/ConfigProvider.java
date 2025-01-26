@@ -12,8 +12,13 @@ public interface ConfigProvider {
                 :ConfigFactory.load("application.conf");
     }
 
+    static Config readUser()    {
+
+        return ConfigFactory.systemProperties().hasPath("testProfile")
+                ?ConfigFactory.load(ConfigFactory.systemProperties().getString("testProfile"))
+                :ConfigFactory.load("users.conf");
+    }
+
     String URL = readConfig().getString("url");;
-//    String SearhElemet = readConfig().getString("searchTestList.searchInput");
-//    String SearchButton = readConfig().getString("searchButton");
     String CaseTest1 = readConfig().getString("searchTestList.case1.find");;
 }

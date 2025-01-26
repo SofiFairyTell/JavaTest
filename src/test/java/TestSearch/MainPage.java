@@ -1,4 +1,4 @@
-package DNSSearch;
+package TestSearch;
 
 import Core.BaseSeleniumPage;
 import org.openqa.selenium.WebElement;
